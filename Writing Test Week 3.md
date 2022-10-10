@@ -2,7 +2,7 @@ WEB DEVELOPMENT ADVANCE
 Day 1
 Javascript intermediate - multidimensional array
 
-* multidimensional array atau arry of array artinya ada array di dalam array
+multidimensional array atau arry of array artinya ada array di dalam array
 contoh
 ```
 let inventory = {
