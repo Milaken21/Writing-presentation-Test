@@ -3,17 +3,15 @@ mengambil item data individual dari server untuk memperbarui bagian halaman web 
 
 API utama di sini adalah Fetch API. memungkinkan JavaScript yang berjalan di halaman untuk membuat permintaan HTTP ke server untuk mengambil sumber daya tertentu. Saat server menyediakannya, JavaScript dapat menggunakan data untuk memperbarui halaman, biasanya dengan menggunakan API manipulasi DOM . Data yang diminta seringkali berupa JSON , yang merupakan format yang baik untuk mentransfer data terstruktur, tetapi bisa juga berupa HTML atau hanya teks.
 
-# Contoh Fetch API
-* Mengambil konten teks
-Pertama, titik masuk ke Fetch API adalah fungsi global yang disebut fetch(), yang menggunakan URL sebagai parameter (dibutuhkan parameter opsional lain untuk setelan khusus, tetapi kami tidak menggunakannya di sini).
-
-Selanjutnya, fetch()adalah API asinkron yang mengembalikan file Promise. Jika Anda tidak tahu apa itu, baca modul tentang JavaScript asinkron , dan khususnya artikel tentang promise , lalu kembali ke sini. Anda akan menemukan artikel itu juga berbicara tentang fetch()API!
-Jadi karena fetch()mengembalikan promise, kami meneruskan fungsi ke then()metode promise yang dikembalikan. Metode ini akan dipanggil ketika permintaan HTTP telah menerima respons dari server. Di handler, kami memeriksa apakah permintaan berhasil, dan membuat kesalahan jika tidak. Jika tidak, kami memanggil response.text(), untuk mendapatkan isi respons sebagai teks.
-Ternyata itu response.text()juga tidak sinkron , jadi kami mengembalikan promise yang dikembalikannya, dan meneruskan fungsi ke then()metode promise baru ini. Fungsi ini akan dipanggil ketika teks respons siap, dan di dalamnya kita akan memperbarui <pre>blok kita dengan teks.
-Terakhir, kita merangkai sebuah catch()handler di bagian akhir, untuk menangkap error yang terjadi di salah satu fungsi asinkron yang kita panggil atau handler-nya.
+# Fetch API
+* Pertama, titik masuk ke Fetch API adalah fungsi global yang disebut fetch(), yang menggunakan URL sebagai parameter (dibutuhkan parameter opsional lain untuk setelan khusus, tetapi kami tidak menggunakannya di sini).
+* Selanjutnya, fetch()adalah API asinkron yang mengembalikan file Promise. Jika Anda tidak tahu apa itu, baca modul tentang JavaScript asinkron , dan khususnya artikel tentang promise , lalu kembali ke sini. Anda akan menemukan artikel itu juga berbicara tentang fetch()API!
+* Jadi karena fetch()mengembalikan promise, kami meneruskan fungsi ke then()metode promise yang dikembalikan. Metode ini akan dipanggil ketika permintaan HTTP telah menerima respons dari server. Di handler, kami memeriksa apakah permintaan berhasil, dan membuat kesalahan jika tidak. Jika tidak, kami memanggil response.text(), untuk mendapatkan isi respons sebagai teks.
+* Ternyata itu response.text()juga tidak sinkron , jadi kami mengembalikan promise yang dikembalikannya, dan meneruskan fungsi ke then()metode promise baru ini. Fungsi ini akan dipanggil ketika teks respons siap, dan di dalamnya kita akan memperbarui <pre>blok kita dengan teks.
+* Terakhir, kita merangkai sebuah catch()handler di bagian akhir, untuk menangkap error yang terjadi di salah satu fungsi asinkron yang kita panggil atau handler-nya.
 
 # API XMLHttpRequest
-Terkadang, terutama dalam kode yang lebih lama, Anda akan melihat API lain yang disebut XMLHttpRequest(sering disingkat sebagai "XHR") yang digunakan untuk membuat permintaan HTTP. Ini mendahului Fetch, dan benar-benar merupakan API pertama yang digunakan secara luas untuk mengimplementasikan AJAX. Kami menyarankan Anda menggunakan Fetch jika Anda bisa: ini adalah API yang lebih sederhana dan memiliki lebih banyak fitur daripada XMLHttpRequest. Kami tidak akan membahas contoh yang menggunakan XMLHttpRequest, tetapi kami akan menunjukkan kepada Anda seperti apa XMLHttpRequestversi permintaan penyimpanan kaleng pertama kami
+Terkadang, terutama dalam kode yang lebih lama, Anda akan melihat API lain yang disebut XMLHttpRequest(sering disingkat sebagai "XHR") yang digunakan untuk membuat permintaan HTTP. Ini mendahului Fetch, dan benar-benar merupakan API pertama yang digunakan secara luas untuk mengimplementasikan AJAX. Kami menyarankan Anda menggunakan Fetch jika Anda bisa: ini adalah API yang lebih sederhana dan memiliki lebih banyak fitur daripada XMLHttpRequest. 
 ```
 const request = new XMLHttpRequest();
 
