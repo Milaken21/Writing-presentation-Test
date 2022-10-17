@@ -252,8 +252,8 @@ Cara simple menggunakan atau pasang bootstrap
 # Layout
 # Breakpoints
 * Breakpoint adalah lebar yang dapat disesuaikan yang menentukan bagaimana tata letak responsif Anda berperilaku di seluruh perangkat atau ukuran viewport di Bootstrap.
-
-Memiliki beberapa breakpoints contoh medium dengan ukuran >=760px
+* Memiliki beberapa breakpoints contoh medium dengan ukuran >=760px
+* Setiap breakpoint dipilih untuk menampung container dengan lebar kelipatan 12 dengan nyaman. Breakpoint juga mewakili subset ukuran perangkat umum dan dimensi area pandang—tidak secara spesifik menargetkan setiap kasus penggunaan atau perangkat. Sebaliknya, rentang memberikan fondasi yang kuat dan konsisten untuk dibangun di hampir semua perangkat.
 # Container
 blok bangunan dasar Bootstrap yang berisi, melapisi, dan menyelaraskan konten Anda dalam perangkat atau area pandang tertentu.
 
