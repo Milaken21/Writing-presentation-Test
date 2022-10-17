@@ -7,7 +7,7 @@ API utama di sini adalah Fetch API. memungkinkan JavaScript yang berjalan di hal
 * Pertama, titik masuk ke Fetch API adalah fungsi global yang disebut fetch(), yang menggunakan URL sebagai parameter (dibutuhkan parameter opsional lain untuk setelan khusus, tetapi kami tidak menggunakannya di sini).
 * Selanjutnya, fetch()adalah API asinkron yang mengembalikan file Promise. Jika Anda tidak tahu apa itu, baca modul tentang JavaScript asinkron , dan khususnya artikel tentang promise , lalu kembali ke sini. Anda akan menemukan artikel itu juga berbicara tentang fetch()API!
 * Jadi karena fetch()mengembalikan promise, kami meneruskan fungsi ke then()metode promise yang dikembalikan. Metode ini akan dipanggil ketika permintaan HTTP telah menerima respons dari server. Di handler, kami memeriksa apakah permintaan berhasil, dan membuat kesalahan jika tidak. Jika tidak, kami memanggil response.text(), untuk mendapatkan isi respons sebagai teks.
-* Ternyata itu response.text()juga tidak sinkron , jadi kami mengembalikan promise yang dikembalikannya, dan meneruskan fungsi ke then()metode promise baru ini. Fungsi ini akan dipanggil ketika teks respons siap, dan di dalamnya kita akan memperbarui <pre>blok kita dengan teks.
+* Ternyata itu response.text()juga tidak sinkron , jadi kami mengembalikan promise yang dikembalikannya, dan meneruskan fungsi ke then()metode promise baru ini. Fungsi ini akan dipanggil ketika teks respons siap, dan di dalamnya kita akan memperbarui blok kita dengan teks.
 * Terakhir, kita merangkai sebuah catch()handler di bagian akhir, untuk menangkap error yang terjadi di salah satu fungsi asinkron yang kita panggil atau handler-nya.
 
 # API XMLHttpRequest
