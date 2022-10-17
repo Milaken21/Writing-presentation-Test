@@ -32,18 +32,15 @@ try {
 }
 ```
 Ada lima tahap untuk ini:
-
 1. Buat XMLHttpRequestobjek baru.
 2. Panggil open()metodenya untuk menginisialisasi.
 3. Tambahkan pendengar acara ke loadacaranya, yang diaktifkan saat respons berhasil diselesaikan. Di pendengar kita memanggil initialize()dengan data.
 4. Tambahkan pendengar acara ke erroracaranya, yang diaktifkan saat permintaan mengalami kesalahan
 5 Kirim permintaan.
-
 Kita juga harus membungkus semuanya dalam blok try...catch , untuk menangani kesalahan yang dilontarkan oleh open()or send().
 
 # Asyncrhonous
 Pemrograman asinkron adalah teknik yang memungkinkan program Anda untuk memulai tugas yang berpotensi berjalan lama dan masih dapat responsif terhadap peristiwa lain saat tugas itu berjalan, daripada harus menunggu sampai tugas itu selesai. Setelah tugas itu selesai, program Anda disajikan dengan hasilnya.
-
 # Synchronous Program
 ```
 const name = 'Miriam';
@@ -54,9 +51,7 @@ console.log(greeting);
 1. Mendeklarasikan string yang disebut name.
 2. Mendeklarasikan string lain yang disebut greeting, yang menggunakan name.
 3. Menampilkan salam ke konsol JavaScript.
-
 Pada setiap titik, browser menunggu baris untuk menyelesaikan pekerjaannya sebelum melanjutkan ke baris berikutnya. Ini harus dilakukan karena setiap baris tergantung pada pekerjaan yang dilakukan pada baris sebelumnya.
-
 # Fungsi synchron yang berjalan lama
 masalah dasar dengan fungsi sinkron yang berjalan lama. Yang kami butuhkan adalah cara agar program kami:
 
