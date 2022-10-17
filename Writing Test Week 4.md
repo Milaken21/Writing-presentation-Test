@@ -4,7 +4,7 @@ mengambil item data individual dari server untuk memperbarui bagian halaman web 
 API utama di sini adalah Fetch API. memungkinkan JavaScript yang berjalan di halaman untuk membuat permintaan HTTP ke server untuk mengambil sumber daya tertentu. Saat server menyediakannya, JavaScript dapat menggunakan data untuk memperbarui halaman, biasanya dengan menggunakan API manipulasi DOM . Data yang diminta seringkali berupa JSON , yang merupakan format yang baik untuk mentransfer data terstruktur, tetapi bisa juga berupa HTML atau hanya teks.
 
 # Contoh Fetch API
-MENGAMBIL KONTEN TEXT
+* Mengambil konten teks
 Pertama, titik masuk ke Fetch API adalah fungsi global yang disebut fetch(), yang menggunakan URL sebagai parameter (dibutuhkan parameter opsional lain untuk setelan khusus, tetapi kami tidak menggunakannya di sini).
 
 Selanjutnya, fetch()adalah API asinkron yang mengembalikan file Promise. Jika Anda tidak tahu apa itu, baca modul tentang JavaScript asinkron , dan khususnya artikel tentang promise , lalu kembali ke sini. Anda akan menemukan artikel itu juga berbicara tentang fetch()API!
