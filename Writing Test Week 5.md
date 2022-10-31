@@ -78,9 +78,10 @@ Tipe lain dan subtipe yang umum digunakan:
 ### Contoh
 Misalnya, klien yang mengakses sumber daya dengan id 23 di sumber artikel di server mungkin mengirim permintaan GET seperti ini:
 
+```
 GET /articles/23
 Accept: text/html, application/xhtml
-
+```
 Accept header field dalam hal ini mengatakan bahwa klien akan menerima konten dalam teks/html atau aplikasi/xhtml.
 
 ## PATHS
@@ -244,23 +245,25 @@ console.log(env.foo);
 
 ### OS
 OS module merupakan module yang digunakan untuk menyediakan informasi terkait sistem operasi komputer yang digunakan user.
-`
+```
 var os = require('05');
 console.log("Platform: " + os.platform());
 console.log("Architecture: " + os.arch());
-`
+```
 ### Util
 Module Util merupakan alat bantu / utilities untuk mendukung kebutuhan internal API di Node JS
-`
+```
 const util = require('util');
 const debuglog = util.debuglog('foo');
 
 debuglog('hello from foo [%d]', 123);
 
-// FOO 3245: hello from foo [123]`
+// FOO 3245: hello from foo [123]
+```
 
 ### Events
-` const EventEmitter = require('events');
+```
+const EventEmitter = require('events');
 
 class MyEmitter extends EventEmitter {}
 
@@ -269,22 +272,23 @@ myEmitter.on('event',() => {
     console.log('an event occured!');
 });
 myEmitter.emit('event');
-`
+```
 
 ### Errors
 Errors merupakan modules yang dapat digunakan untuk mendefinisikan error di Node JS sehingga lebih informatif. Kita juga dapat menghandle error menggunakan try catch
-` 
+```
 // Throws with a ReferenceError because z is not defined.
 try {
     const m = 1;
     const n = n + z;
 } catch (err) {
     // handle the error here
-}`
+}
+```
 
 ### Buffer
 Buffer merupakan modules yang digunakan untuk mengakses, mengelola dan mengubah tipe data raw atau tipe data bytes.
-` 
+``` 
 import { Buffer } from 'buffer';
 const buf = buffer.from('hello world', 'utf8');
 
@@ -292,24 +296,26 @@ console.log(buf.toString('hex'));
 //Prints: 68656c6c66f20776f726c64
 console.log(buf.toString('base64'));
 //Prints: aGVsbG8gd29ybGQ=
-`
+```
 
 ### File System
 Fs atau “file system” merupakan module yang dapat membantu berinteraksi dengan file yang ada diluar code. FS paling sering digunakan untuk membaca file dengan ekstensi .txt, .csv, dan .json
-' 
+```
 import { readFileSync } from 'fs';
-readFileSync ('<directory>');`
+readFileSync ('<directory>');
+```
 
 ### Timers
 Timers merupakan modules yang digunakan untuk melakukan scheduling atau mengatur waktu pemanggilan fungsi yang dapat diatur di waktu tertentu
-`
+```
 import {
     setTimeout,
 } from 'timers/promises' ;
 
 const res = await setTimeout(100, 'result');
 
-console.log(res); //Prints 'Result'`
+console.log(res); //Prints 'Result'
+```
 
 ## Membuat Web Server Dengan Node JS
 ### Node JS Web Server
@@ -319,7 +325,7 @@ Modul HTTP dapat membuat server HTTP yang mendengarkan port server dan memberika
 - Untuk menggunakan modul HTTP, gunakan require()
 - Gunakan method createServer() untuk membuat server HTTP
 -Callback function yang digunakan pada method http.createServer(), akan dijalankan ketika seseorang mencoba mengakses komputer pada port 8080.
-`
+```
 //import http build-in module
 const http = require('http');
 
@@ -327,7 +333,8 @@ const http = require('http');
 http.createServer(function(req, res) {
     res.write('Hello Skilvul!');
     res.end();
-}) listen(8080); // the server object listens on port 8080`
+}) listen(8080); // the server object listens on port 8080
+```
 
 ### Menambahkan HTTP Header
 - Kita bisa menggunakan method res.writeHead() untuk menambahkan header HTTP.
@@ -335,14 +342,15 @@ http.createServer(function(req, res) {
 - Argumen kedua adalah objek yang berisi header respons.
 - Contoh : 
 Jika respons dari server HTTP seharusnya ditampilkan sebagai HTML, maka kita harus menambahkan header HTTP dengan tipe konten yang benar
-`
+```
 const http = require('http');
 
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type' : 'text/html'});
     res.write('Hello Skilvul!');
     res.end
-}).listen(8080);`
+}).listen(8080);
+```
 
 - Respons yang dikembalikan dari HTTP web server bisa dalam berbagai format.
 - Contohnya, Kita bisa mengembalikan response dalam format JSON dan HTML, namun kita juga dapat mengembalikan format teks lain seperti XML dan CSV.
@@ -352,14 +360,15 @@ http.createServer(function (req, res) {
 ### Membaca Query String
 - Callback function pada method http.createServer() memiliki argumen req yang mewakili request dari klien, sebagai objek (objek http.IncomingMessage).
 - Objek ini memiliki sebuah properti yang disebut "url" yang menyimpan informasi url yang sedang mengakses.
-`
+```
 const http = require('http');
 
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type' : 'text/html'});
     res.write('Hello Skilvul!');
     res.end
-}).listen(8080);`
+}).listen(8080);
+```
 - Ketika server di jalankan, kemudian kita akses dari browser ke url : http://localhost:8080/skilvul
 maka akan tampil tulisan skilvul.
 - Ketika server di jalankan, kemudian kita akses dari browser ke url : http://localhost:8080/javascript
@@ -387,7 +396,7 @@ Sedangkan REST (Representional State Transfer) adalah sebuah arsitektur metode k
 - Format Response
 
 ## Basic Syntax ExpressJS
-`
+```
 const express = require ('express')
 const app = express()
 const port = 3000
@@ -398,7 +407,8 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
     console.log('Example app listening at http://localhost:${port}`)
-})`
+})
+```
 Contoh diatas adalah basic syntax dari express JS. Kita akan menggunakan module express kemudian yang berisi routing dan listen
 
 ## Basic Routes
@@ -410,19 +420,19 @@ Kita bisa menjalankan aplikasi sederhana kita dengan cara menggunakan “node”
 Kemudian kita dapat mengaksesnya di website dan menambah route yang akan kita akses yaitu “/”
 ### method
 Kita dapat menggunakan method yang dalam REST API seperti POST, PUT, PATCH dan DELETE
-`
+```
 app.Post('/posting', (req, res) => {
     res.end("posting succes!!!")
 })
-`
-`
+```
+```
 app.Delete('/deleting', (req, res) => {
     res.end("deleting succes!!!")
 })
-`
+```
 ### Response 
 Di dalam route kita dapat mengirim response menggunakan parameter dari route express.js yaitu “res.Send()” untuk mengirim plain text ketika kita mengakses route tersebut. Terdapat banyak response yang bisa kita buat selain yang dicontohkan.
-`
+```
 app.get('/hello', (req, res) => {
     res.json({
         name : "budi", 
@@ -430,7 +440,7 @@ app.get('/hello', (req, res) => {
         greeting: "hallo salam kenal"
     })
 })
-`
+```
 Kita dapat mengirim response berupa output json yang biasa dipakai untuk back end application. Dengan menggunakan output json maka kita dapat mengirim data yang mudah diakses 
 
 ### Status Code
@@ -438,7 +448,7 @@ Dalam pengaplikasian back end application, kita sangat perlu memberikan status c
 
 ### Query
 Query merupakan parameter yang digunakan untuk membantu menentukan tindakan yang lebih spesifik daripada hanya sekedar router biasa. Biasanya query ditaruh di akhir route dengan memberikan informasi diawali dengan “?” kemudian tedapat key dan data yang dapat ditindak lanjuti. Ex : “?q=hello&age=23” 
-`
+```
 app.get('/hello', (req, res) => {
     let name = req.query.name
     let age = req.query.age
@@ -449,7 +459,7 @@ app.get('/hello', (req, res) => {
         greeting: "Hallo Salam Kenal"
     })
 })
-`
+```
 Di ExpressJS kita juga dapat membaca query menggunakan req.query, kemudian informasi tersebut dapat kita olah atau kita kembaliakan lagi seperti contoh
 
 ### Nested Route
@@ -485,27 +495,32 @@ Nested route digunakan ketika terdapat banyak route yang memiliki nama yang sama
 - Sebuah function middleware bisa digunakan untuk mengeksekusi kode apapun untuk suatu tujuan tertentu.
 - Sebagai contoh, kita akan membuat sebuah middleware function yang akan mencetak tulisan “Halo Skilvul, request diterima!” Ketika sebuah HTTP Request masuk kedalam middleware function ini. 
 - Middleware Function ini akan diberi nama dengan skilvulLogger.
-` const skilvulLogger = function (req, res, next) {
+```
+const skilvulLogger = function (req, res, next) {
     console.log('Halo Skilvul, request diterima!')
     next()
-}`
+}
+```
 #### Memodifikasi Object Request dan Object Response.
 - Sebuah function middleware bisa digunakan untuk memodifikasi Object Request dan Object Response.
 - Sebagai contoh, kita akan membuat sebuah middleware function yang akan menambahkan informasi request time pada object request.
 - Middleware Function ini akan diberi nama dengan addRequestTime.
-` const addRequestTime = function (req, res, next) {
+``` 
+const addRequestTime = function (req, res, next) {
     req.requestTime = Date.now()
     next()
-}`
+}
+```
 #### Menghentikan request-response cycle.
 - Sebuah function middleware bisa digunakan untuk menghentikan request-response cycle.
 - Sebagai contoh, kita akan membuat sebuah middleware function yang akan menghentikan request-response cycle.
 - Middleware Function ini akan diberi nama dengan stopHere.
 - Request tidak akan pernah sampai ke handler function, karena middleware telah menghentikan request-response cycle dengan res.send() dan tidak memanggil next()
-`
+```
 const stopHere = function (req, res, next) {
     res.send('<p>request stop from middleware</p>')
-}`
+}
+```
 #### Melanjutkan ke middleware function selanjutnya atau ke handler function dalam suatu request response cycle.
 - Sebuah function middleware bisa digunakan untuk melanjutkan ke middleware function selanjutnya / ke handler function.
 - Sebenarnya kita sudah melakukannya pada contoh-contoh sebelumnya, yaitu dengan cara memanggil function next() pada sebuah middleware function.
@@ -517,13 +532,14 @@ const stopHere = function (req, res, next) {
 - Application Level Middleware adalah sebuh function middleware yang melekat ke instance object Application Express.
 - Penggunaannya dengan cara memanggil method app.use().
 - Application Level Middleware akan di jalankan setiap kali Express Application menerima sebuah HTTP Request.
-`
+```
 const addRequestTime = function (req, res, next) {
     req.requestTime = Date.now()
     next()
 }
 
-app.user(addRequestTime)`
+app.user(addRequestTime)
+```
 
 ### Router Level Middleware
 - Router Level Middleware adalah sebuh function middleware yang cara kerjanya sama persis dengan application level middleware, yang menjadikan perbedaan adalah middleware function ini melekat ke instance object Router Express.
@@ -535,7 +551,7 @@ app.user(addRequestTime)`
 - Express Application sudah menyediakan error handle function default, sehingga kita tidak perlu lagi membuat sendiri functionnya.
 - Error handle function default milik Express Application hanyalah kerangka functionnya saja, kita tetap harus menuliskan di dalam function ini bagaimana sebuah error akan di handle.
 - Error Handling Middleware digunakan pada Application Level Middleware
-`
+```
 const express = require("express")
 const app = express()
 
@@ -544,7 +560,8 @@ const errorHandling = function(err, req, res, next) {
     res.status(500).send('Something broke!')
 }
 
-app.use(errorHandling)`
+app.use(errorHandling)
+```
 Sebuah error handling middleware function harus memberikan 4 (empat) buah argument (err, req, res, next) agar bisa di deteksi oleh Express Application sebagai error handling middleware, sekalipun kita tidak akan pernah menggunakan function next dalam error handling middleware ini.
 
 Jika hal ini tidak dilakukan, maka Express Application tidak akan mengenali middleware function ini sebagai error handling middleware, dan akan memperlakukan middleware ini sebagai Application Level Middleware seperti biasa.
@@ -558,20 +575,22 @@ Jika hal ini tidak dilakukan, maka Express Application tidak akan mengenali midd
 - Adalah salah satu build-in middleware function yang disediakan oleh Express JS.
 - Middleware function ini memungkinkan sebuah express application menerima HTTP Request yang membawa payload (data) dalam format JSON.
 - Middleware function ini tersedia di Express JS versi 4.16.0+
-` const express = require ("express")
+```
+const express = require ("express")
 const app = express()
 
 app.use(express.json())
-`
+```
 #### express.urlEncoded()
 - salah satu build-in middleware function yang disediakan oleh Express JS.
 - Middleware function ini memungkinkan sebuah express application menerima HTTP Request yang membawa payload (data) dalam format urlencoded.
 - Middleware function ini tersedia di Express JS versi 4.16.0+
-` const express = require ("express")
+```
+const express = require ("express")
 const app = express()
 
 app.use(express.urlEncoded())
-`
+```
 ### Express Third Party (custom) Middleware
 Membuat custom middleware function atau menggunakan third party middleware function dapat menambahkan fungsionalitas dari sebuah Express Application.
 Contoh custom middleware seperti function skilvulLogger yang sudah kita buat sebelumnya.
