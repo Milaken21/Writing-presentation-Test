@@ -90,13 +90,17 @@ Permintaan harus berisi jalur ke sumber daya tempat operasi harus dilakukan. Dal
 ### Content Types
 Misalnya, ketika klien mengakses sumber daya dengan id 23 di sumber artikel dengan Permintaan GET ini:
 
-`GET /articles/23 HTTP/1.1
-Accept: text/html, application/xhtml`
+```
+GET /articles/23 HTTP/1.1
+Accept: text/html, application/xhtml
+```
 
 Server mungkin mengirim kembali konten dengan header respons:
 
-`HTTP/1.1 200 (OK)
-Content-Type: text/html`
+```
+HTTP/1.1 200 (OK)
+Content-Type: text/html
+```
 
 ### Response codes
 Tanggapan dari server berisi kode status untuk memperingatkan klien tentang informasi tentang keberhasilan operasi. Sebagai pengembang, Anda tidak perlu mengetahui setiap kode status (ada banyak kode status), tetapi Anda harus mengetahui kode yang paling umum dan cara penggunaannya.
@@ -116,37 +120,47 @@ Tanggapan dari server berisi kode status untuk memperingatkan klien tentang info
 
 #### Contoh
 Jika kita ingin melihat semua pelanggan, permintaannya akan terlihat seperti ini:
-` GET http://skilvul-store.com/customers
-Accept: application/json`
+```
+GET http://skilvul-store.com/customers
+Accept: application/json
+```
 
 Header respons yang mungkin akan terlihat seperti dan diikuti oleh data pelanggan yang diminta dalam format application/json.
-` Status Code: 200 (OK)
-Content-type: application/json`
+```
+Status Code: 200 (OK)
+Content-type: application/json
+```
 
 membuat pelanggan baru dengan memposting data
-` POST http://skilvul-store.com/customers
+```
+POST http://skilvul-store.com/customers
 Body:
 {
     "customers": {
         "nama" = "Tarra",
         "email" = terra@coding.com"
     }
-}`
+}
+```
 
 Server kemudian menghasilkan id untuk objek itu dan mengembalikannya kembali ke klien, dengan header seperti:
 
-` 201 (CREATED)
-Content-type: application/json`
+```
+201 (CREATED)
+Content-type: application/json
+```
 
 Kami dapat memperbarui pelanggan itu dengan PUT data baru dan Header respons yang mungkin akan memiliki Kode Status: 200 (OK), untuk memberi tahu klien bahwa item dengan id 123 telah dimodifikasi.
-` PUT http://skilvul-store.com/customers/123
+``` 
+PUT http://skilvul-store.com/customers/123
 Body:
 {
     "customers": {
         "nama" = "Tarra Skilvul",
         "email" = terra@skilvul.com"
     }
-}`
+}
+```
 
 # Intro & Essential Node JS
 ## Apa itu NodeJS?
@@ -168,23 +182,27 @@ Event loop akan memfasilitasi kondisi ini, event loop akan memeriksa terus mener
 ### Server side scripting
 Sejatinya javascript merupakan bahasa pemrograman yang digunakan di front end side. Sehingga kita hanya bisa mengerjakan javascript dengan menggunakan browser untuk menampilkan hasil eksekusinya. 
 Tetapi dengan menggunakan NodeJS kita dapat menjalankan javascript di server side menggunakan terminal command line menggunakan perintah “node”. 
-` >console.log("Hello World");
-Hello World`
+``` >console.log("Hello World");
+Hello World
+```
 
 ## Javascript For Node JS
 ### Arrow Expression
 Arrow expression merupakan fitur terbaru dari javascript, yaitu mempermudah membuat sintaks function menggunakan “=>” 
-` // non arrow function
+```
+// non arrow function
 function countLength(val1, val2) {
     return val1.length + val2.length
 }
 
 // using arrow function
-const countLengthChar + (val1, val2) => return vall.length + val2.length`
+const countLengthChar + (val1, val2) => return vall.length + val2.length
+```
 
 ### Asynchronous
 Asynchronous merupakan konsep yang paling penting dari javascript. Pada dasarnya, javascript mengeksekusi code secara single thread dan berurutan baris per baris yang disebut dengan synchronous. Sedangkan asynchronous memungkinkan mengeksekusi code tanpa berurutan dengan cara “skip” code dan melanjutkan eksekusi code selanjutnya. Konsep ini menungkinkan code kita tidak terjadi blocking dan lebih efisien.
-`console.log('Hello');
+```
+console.log('Hello');
 setTimeout(() => { console.log('Javascript')},100)// tunda selama 100 miliseconds
 console.log('Coder');
 
@@ -194,32 +212,36 @@ Hello!
 Coder
 Javascript
 ---------*/
-`
+```
 
 ### JSON
 JSON atau Javascript Object Notation merupakan format yang digunakan untuk menyimpan dan mengirim data menggunakan konsep object di javascript. JSON dapat digunakan di hampir semua bahasa pemrograman sehingga sangat cocok untuk dipelajari
-` {"users": [
+```
+{"users": [
     {"username" : "Anton", "lokasi" : "Bandung"},
     {"username" : "Budi", "lokasi" : "Semarang"},
     {"username" : "Nana", "lokasi" : "Surabaya"},
     {"username" : "Jamal", "lokasi" : "Tangerang"},
-]}`
+]}
+```
 
 # Node JS for Back end Development
 ## Build In Module Node JS
 ### console
 Console merupakan module bawaan dari javascript yang ada di node JS untuk digunakan sebagai debug atau menampilkan code secara interface
-` console.log("this is a console module from javascript")`
+``` console.log("this is a console module from javascript")```
 ### process
 Process adalah modules yang digunakan untuk menampilkan dan mengontrol prosess Node JS yang sedang dijalankan.
-` 
+```
 const process = require ('process');
 const env = proces.env
 
 env.foo = 'bar';
 console.log(env.foo);
 
-//'bar'`
+//'bar'
+```
+
 ### OS
 OS module merupakan module yang digunakan untuk menyediakan informasi terkait sistem operasi komputer yang digunakan user.
 `
